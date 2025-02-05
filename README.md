@@ -1,20 +1,20 @@
 # VAEs-for-RNA-Diabetes-Data
 
-#Overview
+# Overview
 This project applies dimensionality reduction techniques to analyze single-cell RNA sequencing (scRNA-seq) data from pancreatic islet cells, distinguishing between Type 2 Diabetes (T2D) patients and non-diabetic controls. The primary technique used is Variational Autoencoders (VAEs), alongside traditional methods like PCA, t-SNE, and UMAP. Our goal is to construct an informative latent space to identify gene expression patterns relevant to diabetes pathology.
 
-#Key Contributions
+# Key Contributions
 Developed a robust pipeline for processing and normalizing scRNA-seq data.
 Explored multiple dimensionality reduction techniques, including PCA, t-SNE, UMAP, and VAEs.
 Implemented Variational Autoencoders (VAEs) to uncover meaningful latent features.
 Evaluated performance using clustering metrics, such as Silhouette Score, Adjusted Rand Index (ARI), and F-Scores.
 Investigated the impact of gene selection and expressivity on clustering performance.
 
-#Data Source
+# Data Source
 Dataset: GSE81608 (obtained from GEO) containing RNA-seq data from pancreatic islet cells.
 Metadata: Manually extracted and aligned using Scanpy.
 
-#Methods
+# Methods
 1. Data Processing
 Metadata Alignment: Mapped control/T2D labels, age, and gender from external files.
 Normalization: Used Scanpy’s normalize_total() to ensure uniform total gene counts per cell.
@@ -33,7 +33,7 @@ Silhouette Score (Cluster tightness)
 Adjusted Rand Index (ARI) (Alignment with control/T2D labels)
 F-Score (Predictive power via Logistic Regression & SVM)
 
-#Results & Findings
+# Results & Findings
 PCA & t-SNE failed to separate diabetic and non-diabetic groups (Silhouette Score < 0.01).
 UMAP showed promise (Silhouette Score 0.31, ARI 0.21, F-score 0.72).
 VAE (All Cell Types) improved latent space, but clustering was dominated by cell types rather than T2D/control status.
